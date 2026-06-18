@@ -15,13 +15,9 @@
 
 ---
 
-## Highlights
+## About
 
-- **Projection-conditioned refinement** — the calibrated 3×4 projection matrices are the core 2D-to-3D lifting mechanism, not an auxiliary loss
-- **Dense 8,192-point reconstruction** of the complete lumbar spine (L1–L5) from just two orthogonal DRRs
-- **1.981 mm Chamfer distance** on 105 held-out patients with 97% VCL Grade A clinical accuracy
-- **Gap-preserving + curvature losses** that maintain inter-vertebral disc spaces and lumbar lordotic curve
-- **Six-generation ablation** tracing every design decision from 2.672 → 1.981 mm
+**PPCNet** (Projection-conditioned Point Cloud Network) reconstructs a **dense 8,192-point cloud** of the complete lumbar spine (L1–L5) from just **two orthogonal DRRs and their calibrated 3×4 projection matrices**. Unlike existing volumetric methods that fuse views through learned attention or concatenation, PPCNet uses the **projection geometry as the core 2D-to-3D lifting mechanism** — each query point is explicitly projected into both views, features are sampled, and bounded displacements nudge it toward the bone surface. With **gap-preserving and curvature losses**, PPCNet achieves **1.981 mm Chamfer distance** on 105 test patients, **97% VCL Grade A** clinical accuracy across 525 vertebrae, and a morphometric MAE of **2.80 mm**.
 
 ---
 
