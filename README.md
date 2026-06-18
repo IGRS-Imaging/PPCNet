@@ -4,12 +4,12 @@
 # PPCNet
 ### Projection-Conditioned Point Cloud Reconstruction of the Lumbar Spine from Biplanar Radiographs
 
-[![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://drive.google.com/YOUR_LINK_HERE)
+[![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**[Dataset]()**
+**[Dataset](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)**
 
 </div>
 
@@ -47,7 +47,8 @@ At each refinement stage, every query point is projected into both image planes 
 ### Qualitative
 
 <div align="center">
-<img src="assets/implementation_figure.png" width="100%">
+<img width="2147" height="1118" alt="implementation_figure" src="https://github.com/user-attachments/assets/31275ebd-10c3-4033-8f78-802b3fc8912d" /><img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/fa61de35-9612-434e-9fb4-33d1f0d068d4" />
+
 </div>
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
@@ -69,7 +70,10 @@ At each refinement stage, every query point is projected into both image planes 
 ### Clinical Validation (525 vertebrae)
 
 <div align="center">
-<img src="assets/Paper_Clinical_Figure.png" width="100%">
+<img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/01f5760c-79ad-4d82-96ad-350620af2dc2" /><img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/51d65cb6-91d2-4c2f-96c3-6a92acab45cf" />
+<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/a688765c-5c9f-4a45-ba3a-a78e5b7b3db2" />
+<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/ebbfced2-af36-4305-b648-a13dbcf65380" />
+
 </div>
 
 <div align="center">
@@ -109,9 +113,9 @@ At each refinement stage, every query point is projected into both image planes 
 
 ## Dataset
 
-The dataset is derived from [VerSe'19 & VerSe'20](https://github.com/anjany/verse) and [CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K), containing **1,037 patients** with complete L1–L5 lumbar segmentation.
+The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containing **1,037 patients** with complete L1–L5 lumbar segmentation.
 
-**[⬇️ Download Dataset (Google Drive)](https://drive.google.com/YOUR_LINK_HERE)** (~60 GB)
+**[⬇️ Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)** (~70 GB)
 
 <details>
 <summary><b>Dataset Structure (click to expand)</b></summary>
@@ -126,11 +130,9 @@ Lumbar_Filtered_1037/
 │   ├── AP_0/
 │   │   ├── drr_AP_0.png           # AP DRR (512×512)
 │   │   ├── P_AP_0.txt             # 3×4 projection matrix
-│   │   └── geometry_AP_0.json     # Full rendering geometry
 │   └── LP_90/
 │       ├── drr_LP_90.png          # Lateral DRR (512×512)
 │       ├── P_LP_90.txt            # 3×4 projection matrix
-│       └── geometry_LP_90.json
 ├── lumbar_0002/
 │   └── ...
 └── ...  (1,037 patients)
@@ -171,7 +173,6 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 # Install dependencies
 pip install numpy scipy scikit-image nibabel open3d vtk pillow tqdm matplotlib
 ```
-
 ---
 
 ## Repository Structure
@@ -243,28 +244,6 @@ Each notebook is self-contained with:
 | **F@2** | F-Score at 2 mm threshold | ↑ |
 | **F@5** | F-Score at 5 mm threshold | ↑ |
 | **HD95** | 95th percentile Hausdorff Distance (mm) | ↓ |
-
----
-
-## Citation
-
-If you find this work useful, please cite:
-
-```bibtex
-@inproceedings{ppcnet2026,
-  title     = {{PPCNet}: Projection-Conditioned Point Cloud Reconstruction 
-               of the Lumbar Spine from Biplanar Radiographs},
-  author    = {Anonymous},
-  booktitle = {MICCAI Workshop on Machine Learning in Medical Imaging (MLMI)},
-  year      = {2026}
-}
-```
-
----
-
-## Acknowledgements
-
-This work was conducted at the Healthcare Technology Innovation Centre (HTIC), Indian Institute of Technology Madras. The dataset is derived from the publicly available [VerSe](https://github.com/anjany/verse) and [CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K) collections.
 
 ---
 
