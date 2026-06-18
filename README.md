@@ -47,8 +47,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Qualitative
 
 <div align="center">
-<img width="2147" height="1118" alt="implementation_figure" src="https://github.com/user-attachments/assets/31275ebd-10c3-4033-8f78-802b3fc8912d" /><img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/fa61de35-9612-434e-9fb4-33d1f0d068d4" />
-
+<img width="2147" height="1118" alt="implementation_figure" src="https://github.com/user-attachments/assets/31275ebd-10c3-4033-8f78-802b3fc8912d" />
 </div>
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
@@ -70,10 +69,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Clinical Validation (525 vertebrae)
 
 <div align="center">
-<img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/01f5760c-79ad-4d82-96ad-350620af2dc2" /><img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/51d65cb6-91d2-4c2f-96c3-6a92acab45cf" />
-<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/a688765c-5c9f-4a45-ba3a-a78e5b7b3db2" />
-<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/ebbfced2-af36-4305-b648-a13dbcf65380" />
-
+<img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/01f5760c-79ad-4d82-96ad-350620af2dc2" />
 </div>
 
 <div align="center">
@@ -93,7 +89,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Ablation Study
 
 <div align="center">
-<img src="assets/ablation_visual.png" width="100%">
+<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/d37ff776-3b07-4c0d-b2b1-925b466ad146" />
 </div>
 
 <div align="center">
