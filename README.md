@@ -4,12 +4,12 @@
 # PPCNet
 ### Projection-Conditioned Point Cloud Reconstruction of the Lumbar Spine from Biplanar Radiographs
 
-[![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y)
+[![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**DATASET MADE OPEN-SOURCE ➡️ [Dataset](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y)**
+**DATASET MADE OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 </div>
 
@@ -107,7 +107,7 @@ At each refinement stage, every query point is projected into both image planes 
 
 The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containing **1,037 patients** with complete L1–L5 lumbar segmentation.
 
-**[⬇️ Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y)** (64.4 GB)
+**[⬇️ Download Dataset (Google Drive)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (64.4 GB)
 
 <details>
 <summary><b>Dataset Structure</b></summary>
