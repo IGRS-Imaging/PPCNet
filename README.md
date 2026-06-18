@@ -8,9 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**[Paper]() | [Dataset]() | [Poster]() | [Video]()**
-
-*Accepted at MICCAI Workshop on Machine Learning in Medical Imaging (MLMI) 2026*
+**[Dataset]()**
 
 </div>
 
