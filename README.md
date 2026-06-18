@@ -3,7 +3,6 @@
 # PPCNet
 ### Projection-Conditioned Point Cloud Reconstruction of the Lumbar Spine from Biplanar Radiographs
 
-[![Paper](https://img.shields.io/badge/Paper-MICCAI_MLMI_2026-blue)](https://link-to-paper)
 [![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://drive.google.com/YOUR_LINK_HERE)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
