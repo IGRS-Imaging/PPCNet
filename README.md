@@ -115,7 +115,7 @@ At each refinement stage, every query point is projected into both image planes 
 
 The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containing **1,037 patients** with complete L1–L5 lumbar segmentation.
 
-**[⬇️ Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)** (~70 GB)
+**[⬇️ Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)** (64.4 GB)
 
 <details>
 <summary><b>Dataset Structure (click to expand)</b></summary>
