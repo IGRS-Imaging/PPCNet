@@ -107,7 +107,7 @@ At each refinement stage, every query point is projected into both image planes 
 
 The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containing **1,037 patients** with complete L1–L5 lumbar segmentation.
 
-**[⬇️ Download Dataset (Google Drive)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (64.4 GB)
+**[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (64.4 GB)
 
 <details>
 <summary><b>Dataset Structure</b></summary>
