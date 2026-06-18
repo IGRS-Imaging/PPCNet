@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # PPCNet
@@ -28,7 +29,7 @@
 
 <!-- Replace with your architecture diagram -->
 <div align="center">
-<img src="assets/arch_diag.png" width="100%">
+<img width="9360" height="10140" alt="arch_diag" src="https://github.com/user-attachments/assets/11855dd6-0128-4a2e-9cd1-c50d672d169e" />
 </div>
 
 <br>
