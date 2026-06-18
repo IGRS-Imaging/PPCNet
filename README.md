@@ -9,7 +9,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**[Dataset](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)**
+**DATASET MADE OPEN-SOURCE ➡️ [Dataset](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)**
 
 </div>
 
@@ -114,7 +114,7 @@ The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containin
 **[⬇️ Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1pHZ8N0acK-EdG-VJ46D2npwnw4q4k75Y?usp=sharing)** (64.4 GB)
 
 <details>
-<summary><b>Dataset Structure (click to expand)</b></summary>
+<summary><b>Dataset Structure</b></summary>
 
 ```
 Lumbar_Filtered_1037/
