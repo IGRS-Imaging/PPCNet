@@ -109,7 +109,6 @@ The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containin
 
 **[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
 
-<details>
 <summary><b>Dataset Structure</b></summary>
 
 ```
@@ -130,9 +129,6 @@ Lumbar_Filtered_1037/
 └── ...  (1,037 patients)
 ```
 
-</details>
-
-<details>
 <summary><b>DRR Generation Parameters</b></summary>
 
 | Parameter | Value |
@@ -145,8 +141,6 @@ Lumbar_Filtered_1037/
 | Views | AP (0°) + Lateral (90°) |
 | Bone Enhancement | 2.5× for HU > 300 |
 | Post-processing | CLAHE contrast normalisation |
-
-</details>
 
 ---
 
