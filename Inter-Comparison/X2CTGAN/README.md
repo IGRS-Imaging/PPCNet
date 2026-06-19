@@ -147,7 +147,7 @@ Inter-Comparison/X2CT-GAN/
 ├── README.md                              # This file
 ├── x2ctgan_inter_comparison.ipynb         # Complete training + evaluation notebook
 └── results/
-    └── test_results_x2ctgan.csv           # Per-patient test metrics
+    └── test_results_x2ctgan.csv, AP, LP & Axial - Views (lumbar_0028 test set)  # Per-patient test metrics
 ```
 
 ---
