@@ -34,9 +34,9 @@ This is a **re-implementation** of X2CT-GAN for fair comparison with PPCNet. The
 Input: AP DRR (128×128) + LP DRR (128×128)
                     ↓
     ┌───────────────┴───────────────┐
-    │     DenseNet-121 Encoder      │     ×2 (AP + LP)
-    │     (ImageNet pretrained)     │
-    │     Output: 1024-d feature    │
+    │  DenseNet-style 2D Encoder    │ ×2 (AP + LP)
+    │  (5 DenseBlocks, InstanceNorm)│
+    │  32→64→128→256→512 channels   │
     └───────────────┬───────────────┘
                     ↓
          Connection-A (1D→3D)
