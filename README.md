@@ -159,21 +159,50 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 # Install dependencies
 pip install numpy scipy scikit-image nibabel open3d vtk pillow tqdm matplotlib
 ```
----
 
+---
+<details>
 ## Repository Structure
 
 ```
 PPCNet/
 ├── README.md                           # This file
 ├── LICENSE
-├── assets/                             # Figures for README
-│   ├── arch_diag.png
-│   ├── implementation_figure.png
-│   ├── Paper_Clinical_Figure.png
-│   └── ablation_visual.png
+├── Inter-Comparison/
+│   ├── X2CTGAN/
+│   │   ├── README.md
+│   │   ├── X2CT_GAN_Inter_Comparison.ipynb
+│   │   └── results/
+│   │       ├── test_results_x2ctgan.csv
+│   │       ├── X2CTGAN_AP_View (lumbar_0028).png
+│   │       ├── X2CTGAN_LP_View (lumbar_0028).png
+│   │       └── X2CTGAN_Axial_View (lumbar_0028).png
+│   ├── BX2SNET/
+│   │   ├── README.md
+│   │   ├── BX2S_Net_Inter_Comparison.ipynb
+│   │   └── results/
+│   │       ├── test_results_bx2snet.csv
+│   │       ├── BX2SNET_AP_View (lumbar_0028).png
+│   │       ├── BX2SNET_LP_View (lumbar_0028).png
+│   │       └── BX2SNET_Axial_View (lumbar_0028).png
+│   ├── Swin-X2S/
+│   │   ├── README.md
+│   │   ├── Swin_X2S_Inter_Comparison.ipynb
+│   │   └── results/
+│   │       ├── test_results_swinx2s.csv
+│   │       ├── SwinX2S_AP_View (lumbar_0028).png
+│   │       ├── SwinX2S_LP_View (lumbar_0028).png
+│   │       └── SwinX2S_Axial_View (lumbar_0028).png
+│   └── 3D-ReVert/
+│       ├── README.md
+│       ├── 3D_ReVert_Inter_Comparison.ipynb
+│       └── results/
+│           ├── test_results_3drevert.csv
+│           ├── 3DReVert_AP_View (lumbar_0028).png
+│           ├── 3DReVert_LP_View (lumbar_0028).png
+│           └── 3DReVert_Axial_View (lumbar_0028).png
 ├── PPCNet-v6/
-│   ├── README.md                       # Version-specific details
+│   ├── README.md
 │   └── ppc_training_v6_fixed.ipynb
 ├── PPCNet-v7/
 │   ├── README.md
@@ -188,9 +217,10 @@ PPCNet/
 ├── PPCNet-v10/
 │   ├── README.md
 │   └── ppc_v10_stable.ipynb
-└── PPCNet-v11/                         # ⭐ Final model (paper)
+└── PPCNet-v11/                         # ⭐ Final model
     ├── README.md
     └── ppc_v11_spine_aware.ipynb
+</details>
 ```
 
 ---
