@@ -161,8 +161,8 @@ pip install numpy scipy scikit-image nibabel open3d vtk pillow tqdm matplotlib
 ```
 
 ---
-<details>
 ## Repository Structure
+<details>
 
 ```
 PPCNet/
@@ -220,8 +220,8 @@ PPCNet/
 └── PPCNet-v11/                         # ⭐ Final model
     ├── README.md
     └── ppc_v11_spine_aware.ipynb
-</details>
 ```
+</details>
 
 ---
 
