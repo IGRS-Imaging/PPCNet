@@ -9,7 +9,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**DATASET MADE OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
+**WE MADE DATASET OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 </div>
 
