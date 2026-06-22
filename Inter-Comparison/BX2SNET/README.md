@@ -5,7 +5,7 @@
 > **BX2S-Net: Learning to Reconstruct 3D Spinal Structures from Bi-planar X-ray Images**
 > Chen, Z., Guo, L., Zhang, R., Fang, Z., He, X., Wang, J.
 > *Computers in Biology and Medicine, 2023*
-> [Paper](https://doi.org/10.1016/j.compbiomed.2023.106615)
+> [Paper](https://doi.org/10.1016/j.compbiomed.2023.106615) | [Original Code](https://github.com/NBU-CVMI/bx2s-net/tree/main)
 
 ---
 
