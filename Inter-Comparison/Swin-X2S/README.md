@@ -5,7 +5,7 @@
 > **Swin-X2S: Reconstructing 3D Shape from 2D Biplanar X-ray with Swin Transformers**
 > Liu, K., et al.
 > *arXiv preprint arXiv:2501.05961, 2025*
-> [Paper](https://doi.org/10.48550/arXiv.2501.05961)
+> [Paper](https://doi.org/10.48550/arXiv.2501.05961) | [Original Code](https://github.com/liukuan5625/Swin-X2S)
 
 ---
 
