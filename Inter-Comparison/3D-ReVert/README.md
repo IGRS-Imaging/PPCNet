@@ -3,8 +3,7 @@
 ## Paper Reference
 
 > **3D-ReVert: 3D Reconstruction of Vertebrae from a Single Radiograph for Minimally Invasive Spine Surgery**
-> Shakya, S., et al.
-> *MICCAI Workshop on Clinical Image-Based Procedures (CLIP), 2024*
+> R. Neeraja, et al.
 > [Paper](https://dl.acm.org/doi/10.1007/978-3-032-09513-8_4)
 
 ---
@@ -210,14 +209,18 @@ The final cells:
 ## Citation
 
 ```bibtex
-@inproceedings{shakya2024revert,
-  author    = {Shakya, Sneha and others},
+@inproceedings{neeraja2025revert,
+  author    = {Neeraja, R. and Anusha, A. and Maik, Vivek and 
+               Purayath, Aparna and Lakshmanan, Manojkumar and 
+               Sivaprakasam, Mohanasankar},
   title     = {{3D-ReVert}: {3D} Reconstruction of Vertebrae from a 
                Single Radiograph for Minimally Invasive Spine Surgery},
-  booktitle = {MICCAI Workshop on Clinical Image-Based Procedures},
+  booktitle = {Machine Learning in Medical Imaging (MLMI), held in 
+               conjunction with MICCAI 2025},
   series    = {LNCS},
+  pages     = {30--40},
   publisher = {Springer},
-  year      = {2024},
-  doi       = {10.1007/978-3-031-73284-3_4}
+  year      = {2025},
+  doi       = {10.1007/978-3-032-09513-8_4}
 }
 ```
