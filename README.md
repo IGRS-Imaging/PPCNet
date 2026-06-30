@@ -87,8 +87,6 @@ At each refinement stage, every query point is projected into both image planes 
 
 To validate clinical applicability beyond computational metrics, we perform phantom-based navigation tracking using a 3D-printed lumbar spine phantom, an optical tracking system, and fiducial-based CT-to-phantom registration.
 
-### Setup
-
 <div align="center">
 <img width="4476" height="1215" alt="navigation_figure" src="https://github.com/user-attachments/assets/ea9d78ab-29f8-4204-a852-696bf2d8e324" />
 </div>
