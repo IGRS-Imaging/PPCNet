@@ -3,6 +3,7 @@
 
 # PPCNet
 # PPCNet: Projection-Conditioned Point Cloud Reconstruction of Spinal Vertebrae from Biplanar Radiographs
+The final model is **PPCNet-v6** (38.6M parameters, 8,192 points, ResNet-34 backbone), the result of a six-generation ablation study (v1–v6) details are provided.
 
 [![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
