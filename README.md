@@ -236,25 +236,25 @@ PPCNet/
 │           ├── 3DReVert_AP_View (lumbar_0028).png
 │           ├── 3DReVert_LP_View (lumbar_0028).png
 │           └── 3DReVert_Axial_View (lumbar_0028).png
-├── PPCNet-v6/
+├── PPCNet-v1/
 │   ├── README.md
 │   └── ppc_training_v6_fixed.ipynb
-├── PPCNet-v7/
+├── PPCNet-v2/
 │   ├── README.md
 │   ├── ppc_training_v7_gap_perfect.ipynb
 │   └── ppc_v7_gan_refiner.ipynb
-├── PPCNet-v8/
+├── PPCNet-v3/
 │   ├── README.md
 │   └── ppc_training_v8_unified.ipynb
-├── PPCNet-v9/
+├── PPCNet-v4/
 │   ├── README.md
 │   └── ppc_v9_hybrid_copy.ipynb
-├── PPCNet-v10/
+├── PPCNet-v5/
 │   ├── README.md
 │   └── ppc_v10_stable.ipynb
-└── PPCNet-v11/                         # ⭐ Final model
+└── PPCNet-v6/                         # ⭐ Final model
     ├── README.md
-    └── ppc_v11_spine_aware.ipynb
+    └── ppc_v6_spine_aware.ipynb
 ```
 </details>
 
@@ -267,12 +267,12 @@ PPCNet/
 DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
 PROJECT_DIR = Path("/path/to/output")
 
-# 2. Run the final model (PPCNet-v11)
-# Open PPCNet-v11/ppc_v11_spine_aware.ipynb and run all cells
+# 2. Run the final model (PPCNet-v6)
+# Open PPCNet-v6/ppc_v6_spine_aware.ipynb and run all cells
 
 # 3. Outputs
 # ├── checkpoints/best_checkpoint.pth   # Trained model
-# ├── results/test_results_v11_tta.csv  # Per-patient metrics
+# ├── results/test_results_v6_tta.csv  # Per-patient metrics
 # └── results/<patient_id>_pred.vtk     # Predicted point clouds
 ```
 
