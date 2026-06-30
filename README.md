@@ -17,7 +17,7 @@
 
 ## About
 
-**PPCNet** (Projection-conditioned Point Cloud Network) reconstructs a **dense 8,192-point cloud** of the complete lumbar spine (L1–L5) from just **two orthogonal DRRs and their calibrated 3×4 projection matrices**. Unlike existing volumetric methods that fuse views through learned attention or concatenation, PPCNet uses the **projection geometry as the core 2D-to-3D lifting mechanism** — each query point is explicitly projected into both views, features are sampled, and bounded displacements nudge it toward the bone surface. With **gap-preserving and curvature losses**, PPCNet achieves **1.981 mm Chamfer distance** on 105 test patients, **97% VCL Grade A** clinical accuracy across 525 vertebrae, and a morphometric MAE of **2.80 mm**.
+**PPCNet** (Projection-Conditioned Point Cloud Network) reconstructs a **dense 8,192-point cloud** of the complete lumbar spine (L1–L5) from just **two orthogonal DRRs and their calibrated 3×4 projection matrices**. Unlike existing volumetric methods that fuse views through learned attention or concatenation, PPCNet uses the **projection geometry as the core 2D-to-3D lifting mechanism** — each query point is explicitly projected into both views, features are sampled, and bounded displacements nudge it toward the bone surface. With **gap-preserving and curvature losses**, PPCNet achieves **1.981 mm Chamfer distance** on 105 test patients, **97% VCL Grade A** clinical accuracy across 525 vertebrae, a morphometric MAE of **2.80 mm**, and a **3.01 mm mean centroid error** in phantom-based surgical navigation tracking.
 
 ---
 
@@ -81,6 +81,41 @@ At each refinement stage, every query point is projected into both image planes 
 | VCL Grade A (VBH) | **509/525 (97%)** | — |
 
 </div>
+
+## Phantom-Based Surgical Navigation Tracking
+
+To validate clinical applicability beyond computational metrics, we perform phantom-based navigation tracking using a 3D-printed lumbar spine phantom, an optical tracking system, and fiducial-based CT-to-phantom registration.
+
+### Setup
+
+<div align="center">
+<img width="4476" height="1215" alt="navigation_figure" src="https://github.com/user-attachments/assets/ea9d78ab-29f8-4204-a852-696bf2d8e324" />
+</div>
+
+**(A)** Physical setup with 3D-printed lumbar phantom, patient reference module (PRM), and tracked needle placed on L4 vertebra edge. **(B)** Real-time navigation on CT-derived STL mesh showing tracked needle tip at L4. **(C)** Navigation on PPCNet-predicted point cloud with needle tip at the same L4 location.
+
+### Registration Results
+
+| Metric | Value |
+|--------|-------|
+| Fiducial Registration Error (FRE) | **0.41 mm** |
+
+### Vertebra Centroid Localisation Error
+
+| Vertebra | Error (mm) |
+|----------|-----------|
+| L1 | 2.84 |
+| L2 | 3.85 |
+| L3 | 2.56 |
+| L4 | 2.31 |
+| L5 | 3.50 |
+| **Mean** | **3.01 mm** |
+| **Max** | **3.85 mm** |
+
+### Clinical Significance
+
+- **FRE = 0.41 mm** — better than the 0.87 mm reported for clinical CT-navigated instrumentation ([Gubian et al., 2022](https://doi.org/10.3390/jcm11195530))
+- **Mean centroid error = 3.01 mm** — well within the clinically accepted Gertzbein-Robbins Grade B threshold (<2 mm pedicle cortical breach) ([Gertzbein & Robbins, 1990](https://doi.org/10.1097/00007632-199001000-00004)) and consistent with ~5 mm screw tip deviations reported in CT-navigated spine surgery ([Virk & Qureshi, 2019](https://doi.org/10.21037/jss.2019.04.23))
 
 ### Ablation Study
 
