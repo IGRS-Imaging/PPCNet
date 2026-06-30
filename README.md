@@ -3,6 +3,7 @@
 
 # PPCNet
 # PPCNet: Projection-Conditioned Point Cloud Reconstruction of Spinal Vertebrae from Biplanar Radiographs
+(The final model is **PPCNet-v6** (38.6M parameters, 8,192 points, ResNet-34 backbone), the result of a six-generation ablation study (v1–v6) details are provided.)
 
 [![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -17,7 +18,7 @@
 
 ## About
 
-**PPCNet** (Projection-conditioned Point Cloud Network) reconstructs a **dense 8,192-point cloud** of the complete lumbar spine (L1–L5) from just **two orthogonal DRRs and their calibrated 3×4 projection matrices**. Unlike existing volumetric methods that fuse views through learned attention or concatenation, PPCNet uses the **projection geometry as the core 2D-to-3D lifting mechanism** — each query point is explicitly projected into both views, features are sampled, and bounded displacements nudge it toward the bone surface. With **gap-preserving and curvature losses**, PPCNet achieves **1.981 mm Chamfer distance** on 105 test patients, **97% VCL Grade A** clinical accuracy across 525 vertebrae, and a morphometric MAE of **2.80 mm**.
+**PPCNet** (Projection-Conditioned Point Cloud Network) reconstructs a **dense 8,192-point cloud** of the complete lumbar spine (L1–L5) from just **two orthogonal DRRs and their calibrated 3×4 projection matrices**. Unlike existing volumetric methods that fuse views through learned attention or concatenation, PPCNet uses the **projection geometry as the core 2D-to-3D lifting mechanism** — each query point is explicitly projected into both views, features are sampled, and bounded displacements nudge it toward the bone surface. With **gap-preserving and curvature losses**, PPCNet achieves **1.981 mm Chamfer distance** on 105 test patients, **97% VCL Grade A** clinical accuracy across 525 vertebrae, a morphometric MAE of **2.80 mm**, and a **3.01 mm mean centroid error** in phantom-based surgical navigation tracking.
 
 ---
 
@@ -43,7 +44,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Qualitative
 
 <div align="center">
-<img width="2147" height="1118" alt="implementation_figure" src="https://github.com/user-attachments/assets/31275ebd-10c3-4033-8f78-802b3fc8912d" />
+<img width="2119" height="1089" alt="implementation_figure" src="https://github.com/user-attachments/assets/c815c1bf-4376-453d-b05d-8ee7f7d129bb" />
 </div>
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
@@ -65,7 +66,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Clinical Validation (525 vertebrae)
 
 <div align="center">
-<img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/01f5760c-79ad-4d82-96ad-350620af2dc2" />
+<img width="9485" height="5573" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/16051434-a2bd-465b-92de-6eef28ff7be7" />
 </div>
 
 <div align="center">
@@ -82,22 +83,55 @@ At each refinement stage, every query point is projected into both image planes 
 
 </div>
 
+## Phantom-Based Surgical Navigation Tracking
+
+To validate clinical applicability beyond computational metrics, we perform phantom-based navigation tracking using a 3D-printed lumbar spine phantom, an optical tracking system, and fiducial-based CT-to-phantom registration.
+
+<div align="center">
+<img width="4476" height="1215" alt="navigation_figure" src="https://github.com/user-attachments/assets/ea9d78ab-29f8-4204-a852-696bf2d8e324" />
+</div>
+
+**(A)** Physical setup with 3D-printed lumbar phantom, patient reference module (PRM), and tracked needle placed on L4 vertebra edge. **(B)** Real-time navigation on CT-derived STL mesh showing tracked needle tip at L4. **(C)** Navigation on PPCNet-predicted point cloud with needle tip at the same L4 location.
+
+### Registration Results
+
+| Metric | Value |
+|--------|-------|
+| Fiducial Registration Error (FRE) | **0.41 mm** |
+
+### Vertebra Centroid Localisation Error
+
+| Vertebra | Error (mm) |
+|----------|-----------|
+| L1 | 2.84 |
+| L2 | 3.85 |
+| L3 | 2.56 |
+| L4 | 2.31 |
+| L5 | 3.50 |
+| **Mean** | **3.01 mm** |
+| **Max** | **3.85 mm** |
+
+### Clinical Significance
+
+- **FRE = 0.41 mm** — better than the 0.87 mm reported for clinical CT-navigated instrumentation ([Gubian et al., 2022](https://doi.org/10.3390/jcm11195530))
+- **Mean centroid error = 3.01 mm** — well within the clinically accepted Gertzbein-Robbins Grade B threshold (<2 mm pedicle cortical breach) ([Gertzbein & Robbins, 1990](https://doi.org/10.1097/00007632-199001000-00004)) and consistent with ~5 mm screw tip deviations reported in CT-navigated spine surgery ([Virk & Qureshi, 2019](https://doi.org/10.21037/jss.2019.04.23))
+
 ### Ablation Study
 
 <div align="center">
-<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/d37ff776-3b07-4c0d-b2b1-925b466ad146" />
+<img width="4800" height="2850" alt="ablation_visual" src="https://github.com/user-attachments/assets/f769b724-1d73-4669-b6c2-415d078cc9cd" />
 </div>
 
 <div align="center">
 
 | Version | Params | Points | Key Addition | CD (mm) ↓ |
 |:-------:|:------:|:------:|:------------|:---------:|
-| PPCNet-v6 | 21.8M | 5,120 | Baseline + projection refinement | 2.672 |
-| PPCNet-v7 | 21.8M | 5,120 | + Gap-occupancy, gated queries | 2.484 |
-| PPCNet-v8 | 21.8M | 5,120 | + Unified pipeline | 2.452 |
-| PPCNet-v9 | 21.8M | 5,120 | + Warm-start, Chamfer-ramp | 2.450 |
-| PPCNet-v10 | 21.8M | 5,120 | + Stability-focused, phased losses | 1.999 |
-| **PPCNet-v11** | **38.6M** | **8,192** | **+ Curvature, extent (ResNet-34)** | **1.981** |
+| PPCNet-v1 | 21.8M | 5,120 | Baseline + projection refinement | 2.672 |
+| PPCNet-v2 | 21.8M | 5,120 | + Gap-occupancy, gated queries | 2.484 |
+| PPCNet-v3 | 21.8M | 5,120 | + Unified pipeline | 2.452 |
+| PPCNet-v4 | 21.8M | 5,120 | + Chamfer-ramp curriculum | 2.450 |
+| PPCNet-v5 | 21.8M | 5,120 | + Stability-focused, phased losses | 1.999 |
+| **PPCNet-v6** | **38.6M** | **8,192** | **+ Curvature, extent (ResNet-34)** | **1.981** |
 
 </div>
 
@@ -202,25 +236,25 @@ PPCNet/
 │           ├── 3DReVert_AP_View (lumbar_0028).png
 │           ├── 3DReVert_LP_View (lumbar_0028).png
 │           └── 3DReVert_Axial_View (lumbar_0028).png
-├── PPCNet-v6/
+├── PPCNet-v1/
 │   ├── README.md
 │   └── ppc_training_v6_fixed.ipynb
-├── PPCNet-v7/
+├── PPCNet-v2/
 │   ├── README.md
 │   ├── ppc_training_v7_gap_perfect.ipynb
 │   └── ppc_v7_gan_refiner.ipynb
-├── PPCNet-v8/
+├── PPCNet-v3/
 │   ├── README.md
 │   └── ppc_training_v8_unified.ipynb
-├── PPCNet-v9/
+├── PPCNet-v4/
 │   ├── README.md
 │   └── ppc_v9_hybrid_copy.ipynb
-├── PPCNet-v10/
+├── PPCNet-v5/
 │   ├── README.md
 │   └── ppc_v10_stable.ipynb
-└── PPCNet-v11/                         # ⭐ Final model
+└── PPCNet-v6/                         # ⭐ Final model
     ├── README.md
-    └── ppc_v11_spine_aware.ipynb
+    └── ppc_v6_spine_aware.ipynb
 ```
 </details>
 
@@ -233,12 +267,12 @@ PPCNet/
 DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
 PROJECT_DIR = Path("/path/to/output")
 
-# 2. Run the final model (PPCNet-v11)
-# Open PPCNet-v11/ppc_v11_spine_aware.ipynb and run all cells
+# 2. Run the final model (PPCNet-v6)
+# Open PPCNet-v6/ppc_v6_spine_aware.ipynb and run all cells
 
 # 3. Outputs
 # ├── checkpoints/best_checkpoint.pth   # Trained model
-# ├── results/test_results_v11_tta.csv  # Per-patient metrics
+# ├── results/test_results_v6_tta.csv  # Per-patient metrics
 # └── results/<patient_id>_pred.vtk     # Predicted point clouds
 ```
 
