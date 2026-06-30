@@ -43,7 +43,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Qualitative
 
 <div align="center">
-<img width="2147" height="1118" alt="implementation_figure" src="https://github.com/user-attachments/assets/31275ebd-10c3-4033-8f78-802b3fc8912d" />
+<img width="2119" height="1089" alt="implementation_figure" src="https://github.com/user-attachments/assets/c815c1bf-4376-453d-b05d-8ee7f7d129bb" />
 </div>
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
@@ -65,7 +65,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Clinical Validation (525 vertebrae)
 
 <div align="center">
-<img width="10435" height="4020" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/01f5760c-79ad-4d82-96ad-350620af2dc2" />
+<img width="9485" height="5573" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/16051434-a2bd-465b-92de-6eef28ff7be7" />
 </div>
 
 <div align="center">
@@ -85,19 +85,19 @@ At each refinement stage, every query point is projected into both image planes 
 ### Ablation Study
 
 <div align="center">
-<img width="2148" height="1380" alt="ablation_visual" src="https://github.com/user-attachments/assets/d37ff776-3b07-4c0d-b2b1-925b466ad146" />
+<img width="4800" height="2850" alt="ablation_visual" src="https://github.com/user-attachments/assets/f769b724-1d73-4669-b6c2-415d078cc9cd" />
 </div>
 
 <div align="center">
 
 | Version | Params | Points | Key Addition | CD (mm) ↓ |
 |:-------:|:------:|:------:|:------------|:---------:|
-| PPCNet-v6 | 21.8M | 5,120 | Baseline + projection refinement | 2.672 |
-| PPCNet-v7 | 21.8M | 5,120 | + Gap-occupancy, gated queries | 2.484 |
-| PPCNet-v8 | 21.8M | 5,120 | + Unified pipeline | 2.452 |
-| PPCNet-v9 | 21.8M | 5,120 | + Warm-start, Chamfer-ramp | 2.450 |
-| PPCNet-v10 | 21.8M | 5,120 | + Stability-focused, phased losses | 1.999 |
-| **PPCNet-v11** | **38.6M** | **8,192** | **+ Curvature, extent (ResNet-34)** | **1.981** |
+| PPCNet-v1 | 21.8M | 5,120 | Baseline + projection refinement | 2.672 |
+| PPCNet-v2 | 21.8M | 5,120 | + Gap-occupancy, gated queries | 2.484 |
+| PPCNet-v3 | 21.8M | 5,120 | + Unified pipeline | 2.452 |
+| PPCNet-v4 | 21.8M | 5,120 | + Chamfer-ramp curriculum | 2.450 |
+| PPCNet-v5 | 21.8M | 5,120 | + Stability-focused, phased losses | 1.999 |
+| **PPCNet-v6** | **38.6M** | **8,192** | **+ Curvature, extent (ResNet-34)** | **1.981** |
 
 </div>
 
