@@ -44,7 +44,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Qualitative
 
 <div align="center">
-<img width="2119" height="1089" alt="implementation_figure" src="https://github.com/user-attachments/assets/c815c1bf-4376-453d-b05d-8ee7f7d129bb" />
+<img width="2131" height="1089" alt="implementation_figure" src="https://github.com/user-attachments/assets/748b12d3-a5a0-4df7-b9ad-92b546108fb3" />
 </div>
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
