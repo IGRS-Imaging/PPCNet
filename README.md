@@ -66,7 +66,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Clinical Validation (525 vertebrae)
 
 <div align="center">
-<img width="9485" height="5573" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/16051434-a2bd-465b-92de-6eef28ff7be7" />
+<img width="9485" height="5573" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/9b81a055-292f-4c0b-8cf3-25650b20454a" />
 </div>
 
 <div align="center">
@@ -88,10 +88,10 @@ At each refinement stage, every query point is projected into both image planes 
 To validate clinical applicability beyond computational metrics, we perform phantom-based navigation tracking using a 3D-printed lumbar spine phantom, an optical tracking system, and fiducial-based CT-to-phantom registration.
 
 <div align="center">
-<img width="4476" height="1215" alt="navigation_figure" src="https://github.com/user-attachments/assets/ea9d78ab-29f8-4204-a852-696bf2d8e324" />
+<img width="4492" height="2453" alt="navigation_figure" src="https://github.com/user-attachments/assets/9568b0a9-4cab-4df5-94f8-7f401280b339" />
 </div>
 
-**(A)** Physical setup with 3D-printed lumbar phantom, patient reference module (PRM), and tracked needle placed on L4 vertebra edge. **(B)** Real-time navigation on CT-derived STL mesh showing tracked needle tip at L4. **(C)** Navigation on PPCNet-predicted point cloud with needle tip at the same L4 location.
+Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Each row shows (A) physical setup, (B) CT-derived STL navigation, (C) PPCNet point cloud navigation.
 
 ### Registration Results
 
