@@ -1,8 +1,8 @@
-# PPCNet-v8: Unified Pipeline
+# PPCNet-v3: Unified Pipeline
 
 ## Overview
 
-PPCNet-v8 unifies the generator and GAN refiner into a single end-to-end training pipeline, retrained from scratch. This eliminates the two-stage training complexity of v7 while maintaining the gap-aware losses. The unified approach achieves a cleaner training trajectory and slightly improved metrics.
+PPCNet-v3 unifies the generator and GAN refiner into a single end-to-end training pipeline, retrained from scratch. This eliminates the two-stage training complexity of v2 while maintaining the gap-aware losses. The unified approach achieves a cleaner training trajectory and slightly improved metrics.
 
 ## Architecture
 
@@ -35,7 +35,7 @@ PPCNet-v8 unifies the generator and GAN refiner into a single end-to-end trainin
 
 ## Files
 
-- `ppc_training_v8_unified.ipynb` — Unified training and evaluation notebook
+- `ppc_training_v3_unified.ipynb` — Unified training and evaluation notebook
 
 ## Usage
 
