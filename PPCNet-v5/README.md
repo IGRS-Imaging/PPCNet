@@ -1,8 +1,8 @@
-# PPCNet-v10: Stability-Focused with Phased Losses
+# PPCNet-v5: Stability-Focused with Phased Losses
 
 ## Overview
 
-PPCNet-v10 introduces a stability-focused training regime with three-phase loss scheduling. Phase 1 establishes core geometry, Phase 2 adds distribution-matching losses (sliced Wasserstein, projection consistency, smoothness, spacing, boundary), and Phase 3 introduces inter-vertebral gap and vertebral separation losses. This careful phasing produces a substantial jump from 2.450 to 1.999 mm Chamfer distance — the single largest improvement in the ablation study.
+PPCNet-v5 introduces a stability-focused training regime with three-phase loss scheduling. Phase 1 establishes core geometry, Phase 2 adds distribution-matching losses (sliced Wasserstein, projection consistency, smoothness, spacing, boundary), and Phase 3 introduces inter-vertebral gap and vertebral separation losses. This careful phasing produces a substantial jump from 2.450 to 1.999 mm Chamfer distance — the single largest improvement in the ablation study.
 
 ## Architecture
 
@@ -39,7 +39,7 @@ PPCNet-v10 introduces a stability-focused training regime with three-phase loss 
 
 ## Files
 
-- `ppc_v10_stable.ipynb` — Training and evaluation notebook
+- `ppc_v5_stable.ipynb` — Training and evaluation notebook
 
 ## Usage
 
