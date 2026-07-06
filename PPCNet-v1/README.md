@@ -1,8 +1,8 @@
-# PPCNet-v6: Baseline
+# PPCNet-v1: Baseline
 
 ## Overview
 
-PPCNet-v6 is the baseline version establishing the core projection-conditioned refinement architecture. It introduces the fundamental pipeline: dual 2D encoders → 3D feature lifting → biplanar fusion → coarse U-Net → occupancy-gated query initialisation → iterative projection-conditioned refinement.
+PPCNet-v1 is the baseline version establishing the core projection-conditioned refinement architecture. It introduces the fundamental pipeline: dual 2D encoders → 3D feature lifting → biplanar fusion → coarse U-Net → occupancy-gated query initialisation → iterative projection-conditioned refinement.
 
 ## Architecture
 
@@ -35,14 +35,14 @@ PPCNet-v6 is the baseline version establishing the core projection-conditioned r
 
 ## Files
 
-- `ppc_training_v6_fixed.ipynb` — Complete training and evaluation notebook
+- `ppc_training_v1_fixed.ipynb` — Complete training and evaluation notebook
 
 ## Usage
 
 1. Update paths in the config cell:
    ```python
    DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
-   PROJECT_DIR = Path("/path/to/ppc_network_v6")
+   PROJECT_DIR = Path("/path/to/ppc_network_v1")
    ```
 2. Run all cells sequentially
 3. Training checkpoints are saved to `PROJECT_DIR/checkpoints/`
