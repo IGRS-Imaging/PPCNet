@@ -1,8 +1,8 @@
-# PPCNet-v11: Spine-Aware (Final Model)
+# PPCNet-v6: Spine-Aware (Final Model)
 
 ## Overview
 
-PPCNet-v11 is the final and best-performing version, introducing architectural scaling (ResNet-18 → ResNet-34, 5,120 → 8,192 points, QUERY_DIM 256 → 384) alongside spine-aware losses including curvature preservation and extent matching. It uses OneCycleLR scheduling with gradient accumulation for effective batch size 8. This is the model reported in the paper.
+PPCNet-v6 is the final and best-performing version, introducing architectural scaling (ResNet-18 → ResNet-34, 5,120 → 8,192 points, QUERY_DIM 256 → 384) alongside spine-aware losses including curvature preservation and extent matching. It uses OneCycleLR scheduling with gradient accumulation for effective batch size 8. This is the model reported in the paper.
 
 ## Architecture
 
