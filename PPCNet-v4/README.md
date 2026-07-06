@@ -1,8 +1,8 @@
-# PPCNet-v9: Warm-Start + Chamfer-Ramp Curriculum
+# PPCNet-v4: Warm-Start + Chamfer-Ramp Curriculum
 
 ## Overview
 
-PPCNet-v9 introduces warm-starting from the v8 checkpoint and a Chamfer-ramp curriculum that gradually increases the Chamfer loss weight during early training. It also upgrades the gap volume to 128³ resolution and adds a Z-axis gap loss. This version achieves the best HD95 (6.051 mm) among all fixed-backbone variants.
+PPCNet-v4 introduces warm-starting from the v8 checkpoint and a Chamfer-ramp curriculum that gradually increases the Chamfer loss weight during early training. It also upgrades the gap volume to 128³ resolution and adds a Z-axis gap loss. This version achieves the best HD95 (6.051 mm) among all fixed-backbone variants.
 
 ## Architecture
 
@@ -37,10 +37,10 @@ PPCNet-v9 introduces warm-starting from the v8 checkpoint and a Chamfer-ramp cur
 
 ## Files
 
-- `ppc_v9_hybrid_copy.ipynb` — Training and evaluation notebook
+- `ppc_v4_hybrid_copy.ipynb` — Training and evaluation notebook
 
 ## Usage
 
-1. **Requires v8 checkpoint** — train PPCNet-v8 first
+1. **Requires v2 checkpoint** — train PPCNet-v2 first
 2. Update paths in config cell, including path to v8 checkpoint
 3. Run all cells sequentially
