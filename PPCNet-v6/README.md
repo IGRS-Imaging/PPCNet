@@ -82,7 +82,7 @@ PPCNet-v6 is the final and best-performing version, introducing architectural sc
 
 ## Files
 
-- `ppc_v11_spine_aware.ipynb` — Complete training, evaluation, and clinical validation notebook
+- `ppc_v6_spine_aware.ipynb` — Complete training, evaluation, and clinical validation notebook
 
 ## Usage
 
