@@ -2,7 +2,7 @@
 
 ## Overview
 
-PPCNet-v4 introduces warm-starting from the v8 checkpoint and a Chamfer-ramp curriculum that gradually increases the Chamfer loss weight during early training. It also upgrades the gap volume to 128³ resolution and adds a Z-axis gap loss. This version achieves the best HD95 (6.051 mm) among all fixed-backbone variants.
+PPCNet-v4 introduces warm-starting from the v2 checkpoint and a Chamfer-ramp curriculum that gradually increases the Chamfer loss weight during early training. It also upgrades the gap volume to 128³ resolution and adds a Z-axis gap loss. This version achieves the best HD95 (6.051 mm) among all fixed-backbone variants.
 
 ## Architecture
 
