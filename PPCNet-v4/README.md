@@ -42,5 +42,5 @@ PPCNet-v4 introduces warm-starting from the v8 checkpoint and a Chamfer-ramp cur
 ## Usage
 
 1. **Requires v2 checkpoint** — train PPCNet-v2 first
-2. Update paths in config cell, including path to v8 checkpoint
+2. Update paths in config cell, including path to v2 checkpoint
 3. Run all cells sequentially
