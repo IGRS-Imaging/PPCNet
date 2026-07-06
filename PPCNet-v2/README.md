@@ -1,8 +1,8 @@
-# PPCNet-v7: Gap-Occupancy + GAN Refiner
+# PPCNet-v2: Gap-Occupancy + GAN Refiner
 
 ## Overview
 
-PPCNet-v7 introduces gap-aware reconstruction through a 96³ gap-occupancy volume, occupancy-gated query initialisation, and a family of gap-preserving losses. A post-hoc SN-GAN refiner is also trained to further sharpen the point distribution, though its metric improvement is marginal (CD: 2.485→2.484 mm).
+PPCNet-v2 introduces gap-aware reconstruction through a 96³ gap-occupancy volume, occupancy-gated query initialisation, and a family of gap-preserving losses. A post-hoc SN-GAN refiner is also trained to further sharpen the point distribution, though its metric improvement is marginal (CD: 2.485→2.484 mm).
 
 ## Architecture
 
@@ -46,12 +46,12 @@ PPCNet-v7 introduces gap-aware reconstruction through a 96³ gap-occupancy volum
 
 ## Files
 
-- `ppc_training_v7_gap_perfect.ipynb` — Generator training notebook
-- `ppc_v7_gan_refiner.ipynb` — SN-GAN refiner training notebook
+- `ppc_training_v2_gap_perfect.ipynb` — Generator training notebook
+- `ppc_v2_gan_refiner.ipynb` — SN-GAN refiner training notebook
 
 ## Usage
 
 1. Update paths in the config cell of both notebooks
-2. **Train generator first** using `ppc_training_v7_gap_perfect.ipynb`
-3. **Then train refiner** using `ppc_v7_gan_refiner.ipynb` (loads generator checkpoint)
+2. **Train generator first** using `ppc_training_v2_gap_perfect.ipynb`
+3. **Then train refiner** using `ppc_v2_gan_refiner.ipynb` (loads generator checkpoint)
 4. Test evaluation is in the generator notebook (with refiner applied)
