@@ -21,7 +21,7 @@ DATASET_ROOT = Path(args.input_dir)
 OUTPUT_ROOT  = Path(args.output_dir)
 
 # All patients in dataset
-PATIENT_IDS = [f"lumbar_{i:04d}" for i in range(1, args.num_patients + 1)]
+PATIENT_IDS = [f"lumbar_{i:04d}" for i in range(1, 1054)]
 
 # VerSe label mapping
 LEVELS_MAP = {20: "L1", 21: "L2", 22: "L3", 23: "L4", 24: "L5"}
