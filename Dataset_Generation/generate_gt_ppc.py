@@ -15,10 +15,6 @@ parser.add_argument("--input_dir", type=str, required=True,
                     help="Root directory containing patient folders with ct.nii.gz and seg.nii.gz")
 parser.add_argument("--output_dir", type=str, required=True,
                     help="Output directory for GT point clouds")
-parser.add_argument("--num_patients", type=int, default=1053,
-                    help="Number of patients (default: 1053)")
-parser.add_argument("--num_points", type=int, default=5120,
-                    help="Points per patient (default: 5120)")
 args = parser.parse_args()
 
 DATASET_ROOT = Path(args.input_dir)
@@ -31,7 +27,7 @@ PATIENT_IDS = [f"lumbar_{i:04d}" for i in range(1, args.num_patients + 1)]
 LEVELS_MAP = {20: "L1", 21: "L2", 22: "L3", 23: "L4", 24: "L5"}
 
 # GT PPC settings
-N_GT_POINTS    = args.num_points      # Total points per patient
+N_GT_POINTS    = 5120      # Total points per patient
 MIN_GT_VOXELS  = 5000      # Skip patients with degenerate labels
 ICP_THRESHOLD  = 50.0      # mm for rigid alignment
 
