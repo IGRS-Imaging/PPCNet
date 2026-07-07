@@ -51,7 +51,7 @@ OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 # ═════════════════════════════════════════════════════════
 
 def load_ply_points(ply_path):
-    """Load .ply as Nx3 numpy array with retry on Drive errors."""
+    """Load .ply as Nx3 numpy array with retry."""
     last_error = None
     for attempt in range(MAX_RETRIES):
         try:
