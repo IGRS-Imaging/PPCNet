@@ -162,8 +162,8 @@ Inter-Comparison/BX2SNET/
 In Cell 1 of the notebook, update:
 
 ```python
-DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
-PROJECT_DIR = Path("/path/to/inter_comparison_bx2snet")
+DATA_ROOT   = Path("./data/Lumbar_Filtered_1037")
+PROJECT_DIR = Path("./inter_comparison_bx2snet")
 ```
 
 ### 2. Run Training
