@@ -35,7 +35,7 @@ N_GT_POINTS    = args.num_points      # Total points per patient
 MIN_GT_VOXELS  = 5000      # Skip patients with degenerate labels
 ICP_THRESHOLD  = 50.0      # mm for rigid alignment
 
-# Retry settings for Google Drive sync errors
+# Retry settings for filesystem robustness
 MAX_RETRIES    = 5
 RETRY_DELAY    = 3         # seconds (increases per retry)
 
@@ -47,7 +47,7 @@ OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 
 
 # ═════════════════════════════════════════════════════════
-# I/O helpers with retry (for Google Drive sync robustness)
+# I/O helpers with retry
 # ═════════════════════════════════════════════════════════
 
 def load_ply_points(ply_path):
