@@ -7,6 +7,7 @@ from skimage import measure
 import nibabel as nib
 import time
 import csv
+import argparse
 
 # ─── CONFIG ───────────────────────────────────────────────
 parser = argparse.ArgumentParser(description="Generate ground-truth point clouds")
@@ -24,13 +25,13 @@ DATASET_ROOT = Path(args.input_dir)
 OUTPUT_ROOT  = Path(args.output_dir)
 
 # All patients in dataset
-PATIENT_IDS = [f"lumbar_{i:04d}" for i in range(1, 1054)]
+PATIENT_IDS = [f"lumbar_{i:04d}" for i in range(1, args.num_patients + 1)]
 
 # VerSe label mapping
 LEVELS_MAP = {20: "L1", 21: "L2", 22: "L3", 23: "L4", 24: "L5"}
 
 # GT PPC settings
-N_GT_POINTS    = 5120      # Total points per patient
+N_GT_POINTS    = args.num_points      # Total points per patient
 MIN_GT_VOXELS  = 5000      # Skip patients with degenerate labels
 ICP_THRESHOLD  = 50.0      # mm for rigid alignment
 
