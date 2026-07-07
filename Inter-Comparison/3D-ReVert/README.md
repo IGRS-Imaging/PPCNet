@@ -168,8 +168,8 @@ Inter-Comparison/3D-ReVert/
 In Cell 2 of the notebook, update:
 
 ```python
-DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
-PROJECT_DIR = Path("/path/to/3drevert_lumbar_comparison")
+DATA_ROOT   = Path("./data/Lumbar_Filtered_1037")
+PROJECT_DIR = Path("./3drevert_lumbar_comparison")
 ```
 
 ### 2. Run Training
