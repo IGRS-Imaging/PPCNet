@@ -89,9 +89,9 @@ PPCNet-v6 is the final and best-performing version, introducing architectural sc
 1. Update paths in the config cell:
    ```python
    DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
-   PROJECT_DIR = Path("/path/to/ppc_network_v11")
+   PROJECT_DIR = Path("/path/to/ppc_network_v6")
    ```
 2. Run all cells sequentially
 3. Training takes ~300 epochs on NVIDIA A100-SXM4-80GB (~42s/epoch Phase 1, ~70s/epoch Phase 2)
 4. Inference: ~5.4s per patient with TTA
-5. Test results saved to `PROJECT_DIR/results/test_results_v11_tta.csv`
+5. Test results saved to `PROJECT_DIR/results/test_results_v6_tta.csv`
