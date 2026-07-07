@@ -8,3 +8,13 @@ The scripts in this folder reproduce the dataset generation pipeline from the so
 
 1. `generate_drr.py` — Generates biplanar DRRs and projection matrices using Plastimatch.
 2. `generate_gt_ppc.py` — Generates ground-truth point clouds.
+
+# Generate DRRs
+python generate_drr.py \
+    --input_dir /path/to/Lumbar_ALL_LPS \
+    --plastimatch /usr/bin/plastimatch
+
+# Generate GT point clouds
+python generate_gt_ppc.py \
+    --input_dir /path/to/Lumbar_ALL_LPS \
+    --output_dir /path/to/Lumbar_GT_PPC
