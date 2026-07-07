@@ -37,8 +37,15 @@ from pydicom.uid import generate_uid
 import datetime
 
 # ── CONFIGURATION ──────────────────────────────────────────────────────
-ROOT            = r"G:\My Drive\Lumbar_ALL_LPS"
-PLASTIMATCH_EXE = r"C:\Program Files\Plastimatch\bin\plastimatch.exe"
+parser = argparse.ArgumentParser(description="Generate DRRs for all patients")
+parser.add_argument("--input_dir", type=str, required=True,
+                    help="Root directory containing patient folders (e.g., lumbar_0001/ct.nii.gz)")
+parser.add_argument("--plastimatch", type=str, default="plastimatch",
+                    help="Path to Plastimatch executable")
+args = parser.parse_args()
+
+ROOT            = args.input_dir
+PLASTIMATCH_EXE = args.plastimatch
 
 SAD = 1000.0
 SID = 1500.0
