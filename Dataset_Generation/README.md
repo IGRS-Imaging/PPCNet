@@ -2,7 +2,7 @@
 
 The complete dataset (1,037 patients with biplanar DRRs, projection matrices, and ground-truth point clouds) is available on HuggingFace:
 
-**[PPCNet Dataset on HuggingFace](your-huggingface-link)**
+**[PPCNet Dataset on HuggingFace](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 The scripts in this folder reproduce the dataset generation pipeline from the source CT scans (VerSe + CTSpine1K):
 
