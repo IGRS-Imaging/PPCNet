@@ -26,7 +26,7 @@ Structure after running:
 Resume-safe: skips CTs where all 10 views already have geometry JSON.
 """
 
-import os, json, glob, subprocess, sys, time
+import os, json, glob, subprocess, sys, time, argparse
 import numpy as np
 import SimpleITK as sitk
 from PIL import Image
