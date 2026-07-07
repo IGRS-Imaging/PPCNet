@@ -312,7 +312,6 @@ def main():
     print(f"\n{'='*70}")
     print(f"  Done in {elapsed/60:.1f} min")
     print(f"  OK: {stats['ok']}  |  Skipped: {stats['skip']}  |  Failed: {stats['fail']}")
-    print(f"  Next: python generate_mask_all.py")
     print(f"{'='*70}")
 
 
