@@ -1,7 +1,7 @@
 PPCNet — Tracking Videos
 ==================================
 
-This archive contains four supplementary videos demonstrating
+The videos demonstrating
 the clinical applicability of PPCNet for surgical navigation
 and reconstruction quality.
 
@@ -28,14 +28,3 @@ Videos
    point cloud (green, 5,120 points) and PPCNet-predicted
    point cloud (blue, 8,192 points) for the same patient.
    (1918x1008, 30 fps, 53s)
-
-Codec Information
------------------
-Format:  MP4 (H.264 / AVC)
-Codec:   H.264 (Main/High profile)
-URL:     https://www.videolan.org/vlc/
-         (VLC media player plays H.264 natively)
-
-All videos are encoded at 30 fps and can be played
-with any standard media player (VLC, Windows Media
-Player, QuickTime).
