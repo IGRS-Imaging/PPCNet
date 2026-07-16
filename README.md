@@ -287,7 +287,7 @@ Each notebook is self-contained with:
 
 ---
 
-## Evaluation Metrics
+## Evaluation Metrics Used
 
 | Metric | Description | Direction |
 |--------|-------------|:---------:|
@@ -296,11 +296,3 @@ Each notebook is self-contained with:
 | **F@2** | F-Score at 2 mm threshold | ↑ |
 | **F@5** | F-Score at 5 mm threshold | ↑ |
 | **HD95** | 95th percentile Hausdorff Distance (mm) | ↓ |
-
----
-
-<div align="center">
-
-**⭐ If you find this repository helpful, please consider giving it a star! ⭐**
-
-</div>
