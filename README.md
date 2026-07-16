@@ -25,7 +25,7 @@
 
 <!-- Replace with your architecture diagram -->
 <div align="center">
-<img width="9360" height="10140" alt="arch_diag" src="https://github.com/user-attachments/assets/11855dd6-0128-4a2e-9cd1-c50d672d169e" />
+<img alt="arch_diag" src="https://github.com/user-attachments/assets/11855dd6-0128-4a2e-9cd1-c50d672d169e" />
 </div>
 
 <br>
@@ -43,7 +43,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Qualitative
 
 <div align="center">
-<img width="2131" height="1089" alt="implementation_figure" src="https://github.com/user-attachments/assets/748b12d3-a5a0-4df7-b9ad-92b546108fb3" />
+<img alt="implementation_figure" src="https://github.com/user-attachments/assets/748b12d3-a5a0-4df7-b9ad-92b546108fb3" />
 </div>
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
@@ -65,7 +65,7 @@ At each refinement stage, every query point is projected into both image planes 
 ### Clinical Validation (525 vertebrae)
 
 <div align="center">
-<img width="9485" height="5573" alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/9b81a055-292f-4c0b-8cf3-25650b20454a" />
+<img alt="Paper_Clinical_Figure" src="https://github.com/user-attachments/assets/9b81a055-292f-4c0b-8cf3-25650b20454a" />
 </div>
 
 <div align="center">
@@ -87,18 +87,24 @@ At each refinement stage, every query point is projected into both image planes 
 To validate clinical applicability beyond computational metrics, we perform phantom-based navigation tracking using a 3D-printed lumbar spine phantom, an optical tracking system, and fiducial-based CT-to-phantom registration.
 
 <div align="center">
-<img width="4492" height="2453" alt="navigation_figure" src="https://github.com/user-attachments/assets/9568b0a9-4cab-4df5-94f8-7f401280b339" />
+<img alt="navigation_figure" src="https://github.com/user-attachments/assets/9568b0a9-4cab-4df5-94f8-7f401280b339" />
 </div>
 
 Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Each row shows (A) physical setup, (B) CT-derived STL navigation, (C) PPCNet point cloud navigation.
 
 ### Registration Results
 
+<div align="center">
+    
 | Metric | Value |
 |--------|-------|
 | Fiducial Registration Error (FRE) | **0.41 mm** |
 
+</div>
+
 ### Vertebra Centroid Localisation Error
+
+<div align="center">
 
 | Vertebra | Error (mm) |
 |----------|-----------|
@@ -110,6 +116,8 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 | **Mean** | **3.01 mm** |
 | **Max** | **3.85 mm** |
 
+</div>
+
 ### Clinical Significance
 
 - **FRE = 0.41 mm** — better than the 0.87 mm reported for clinical CT-navigated instrumentation ([Gubian et al., 2022](https://doi.org/10.3390/jcm11195530))
@@ -118,7 +126,7 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 ### Ablation Study
 
 <div align="center">
-<img width="4800" height="2850" alt="ablation_visual" src="https://github.com/user-attachments/assets/f769b724-1d73-4669-b6c2-415d078cc9cd" />
+<img alt="ablation_visual" src="https://github.com/user-attachments/assets/f769b724-1d73-4669-b6c2-415d078cc9cd" />
 </div>
 
 <div align="center">
@@ -138,7 +146,7 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 
 ## Dataset
 
-The dataset is derived from **VerSe'19 & VerSe'20** and **CTSpine1K**, containing **1,037 patients** with complete L1–L5 lumbar segmentation.
+We curate a custom dataset from **[VerSe'19 & VerSe'20](https://github.com/anjany/verse)** and **[CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K)**, selecting **1,037 patients** with complete L1–L5 lumbar segmentation labels. For each patient, we generate paired biplanar DRRs (AP + Lateral) using **[Plastimatch](https://plastimatch.org/)** ray-casting, along with calibrated 3×4 projection matrices and ground-truth point clouds — all configured for direct use with PPCNet training and evaluation. The complete dataset is open-sourced on Hugging Face.
 
 **[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
 
@@ -164,6 +172,8 @@ Lumbar_Filtered_1037/
 
 <summary><b>DRR Generation Parameters</b></summary>
 
+<div align="center">
+
 | Parameter | Value |
 |-----------|-------|
 | Algorithm | Plastimatch ray-casting |
@@ -174,6 +184,8 @@ Lumbar_Filtered_1037/
 | Views | AP (0°) + Lateral (90°) |
 | Bone Enhancement | 2.5× for HU > 300 |
 | Post-processing | CLAHE contrast normalisation |
+
+</div>
 
 ---
 
@@ -289,6 +301,8 @@ Each notebook is self-contained with:
 
 ## Evaluation Metrics Used
 
+<div align="center">
+
 | Metric | Description | Direction |
 |--------|-------------|:---------:|
 | **CD** | Bidirectional Chamfer Distance (mm) | ↓ |
@@ -296,3 +310,11 @@ Each notebook is self-contained with:
 | **F@2** | F-Score at 2 mm threshold | ↑ |
 | **F@5** | F-Score at 5 mm threshold | ↑ |
 | **HD95** | 95th percentile Hausdorff Distance (mm) | ↓ |
+
+</div>
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
