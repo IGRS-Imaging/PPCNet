@@ -93,18 +93,12 @@ To validate clinical applicability beyond computational metrics, we perform phan
 Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Each row shows (A) physical setup, (B) CT-derived STL navigation, (C) PPCNet point cloud navigation.
 
 ### Registration Results
-
-<div align="center>
     
 | Metric | Value |
 |--------|-------|
 | Fiducial Registration Error (FRE) | **0.41 mm** |
 
-</div>
-
 ### Vertebra Centroid Localisation Error
-
-<div align="center>
 
 | Vertebra | Error (mm) |
 |----------|-----------|
@@ -115,8 +109,6 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 | L5 | 3.50 |
 | **Mean** | **3.01 mm** |
 | **Max** | **3.85 mm** |
-
-</div>
 
 ### Clinical Significance
 
