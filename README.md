@@ -315,6 +315,16 @@ Each notebook is self-contained with:
 
 ---
 
+### 360° Point Cloud Visualization
+
+<div align="center">
+<video src="https://github.com/user-attachments/assets/d9da29bc-6a6a-4469-82fa-7fd767c000b3" controls width="600"></video>
+</div>
+
+<p align="center"><i>360° rotation of the predicted 8,192-point lumbar spine reconstruction (PPCNet-v6)</i></p>
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
