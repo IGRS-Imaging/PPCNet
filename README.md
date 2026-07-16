@@ -201,7 +201,9 @@ pip install numpy scipy scikit-image nibabel open3d vtk pillow tqdm matplotlib
 PPCNet/
 ├── README.md                           # This file
 ├── LICENSE
-├── Media
+├── Media/
+│   ├── Images/
+│   ├── Videos/
 ├── Inter-Comparison/
 │   ├── X2CTGAN/
 │   │   ├── README.md
