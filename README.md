@@ -48,6 +48,20 @@ At each refinement stage, every query point is projected into both image planes 
 
 <p align="center"><i>(A) Input AP & Lateral DRRs → (B) Predicted 8,192-point cloud → (C) Per-vertebra labels via ICP → (D) Axial view of L1 → (E) Distance-to-GT heatmap</i></p>
 
+<div align="center">
+<table>
+<tr>
+<td align="center"><b>360° Point Cloud Rotation</b></td>
+<td align="center"><b>Ground Truth vs Prediction</b></td>
+</tr>
+<tr>
+<td><video src="https://github.com/user-attachments/assets/3c301d25-e19c-4bda-8f65-33fc61254ed4" controls width="380"></video></td>
+<td><video src="https://github.com/user-attachments/assets/b71c6bb6-4629-4593-b735-7a55b3d13490" controls width="380"></video></td>
+</tr>
+</table>
+</div>
+<p align="center"><i>Left: 360° rotation of PPCNet-v6 prediction (8,192 points). Right: Ground truth (green, 5,120 pts) vs prediction (blue, 8,192 pts).</i></p>
+
 ### Quantitative (105 test patients)
 
 <div align="center">
@@ -91,6 +105,19 @@ To validate clinical applicability beyond computational metrics, we perform phan
 </div>
 
 Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Each row shows (A) physical setup, (B) CT-derived STL navigation, (C) PPCNet point cloud navigation.
+
+<div align="center">
+<table>
+<tr>
+<td align="center"><b>CT-derived STL Navigation</b></td>
+<td align="center"><b>PPCNet Point Cloud Navigation</b></td>
+</tr>
+<tr>
+<td><video src="https://github.com/user-attachments/assets/1aad766e-0d4e-4df3-b443-b632fdbcb18b" controls width="380"></video></td>
+<td><video src="https://github.com/user-attachments/assets/d39844d9-16ff-425a-a5ed-0fe50b6eaf5e" controls width="380"></video></td>
+</tr>
+</table>
+</div>
 
 ### Registration Results
 
@@ -312,16 +339,6 @@ Each notebook is self-contained with:
 | **HD95** | 95th percentile Hausdorff Distance (mm) | ↓ |
 
 </div>
-
----
-
-### 360° Point Cloud Visualization
-
-<div align="center">
-<video src="https://github.com/user-attachments/assets/d9da29bc-6a6a-4469-82fa-7fd767c000b3" controls width="600"></video>
-</div>
-
-<p align="center"><i>360° rotation of the predicted 8,192-point lumbar spine reconstruction (PPCNet-v6)</i></p>
 
 ---
 
