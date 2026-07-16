@@ -93,12 +93,18 @@ To validate clinical applicability beyond computational metrics, we perform phan
 Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Each row shows (A) physical setup, (B) CT-derived STL navigation, (C) PPCNet point cloud navigation.
 
 ### Registration Results
+
+<div align="center">
     
 | Metric | Value |
 |--------|-------|
 | Fiducial Registration Error (FRE) | **0.41 mm** |
 
+</div>
+
 ### Vertebra Centroid Localisation Error
+
+<div align="center">
 
 | Vertebra | Error (mm) |
 |----------|-----------|
@@ -109,6 +115,8 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 | L5 | 3.50 |
 | **Mean** | **3.01 mm** |
 | **Max** | **3.85 mm** |
+
+</div>
 
 ### Clinical Significance
 
@@ -164,6 +172,8 @@ Lumbar_Filtered_1037/
 
 <summary><b>DRR Generation Parameters</b></summary>
 
+<div align="center">
+
 | Parameter | Value |
 |-----------|-------|
 | Algorithm | Plastimatch ray-casting |
@@ -174,6 +184,8 @@ Lumbar_Filtered_1037/
 | Views | AP (0°) + Lateral (90°) |
 | Bone Enhancement | 2.5× for HU > 300 |
 | Post-processing | CLAHE contrast normalisation |
+
+</div>
 
 ---
 
@@ -289,6 +301,8 @@ Each notebook is self-contained with:
 
 ## Evaluation Metrics Used
 
+<div align="center">
+
 | Metric | Description | Direction |
 |--------|-------------|:---------:|
 | **CD** | Bidirectional Chamfer Distance (mm) | ↓ |
@@ -296,6 +310,8 @@ Each notebook is self-contained with:
 | **F@2** | F-Score at 2 mm threshold | ↑ |
 | **F@5** | F-Score at 5 mm threshold | ↑ |
 | **HD95** | 95th percentile Hausdorff Distance (mm) | ↓ |
+
+</div>
 
 ---
 
