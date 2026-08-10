@@ -9,7 +9,8 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**WE MADE DATASET OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
+**WE MADE DATASET OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet) [![DOI](https://img.shields.io/badge/DOI-10.xxxx%2Fxxxxx-blue)](https://doi.org/10.57967/hf/9944)**
+
 
 </div>
 
@@ -175,8 +176,19 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 
 We curate a custom dataset from **[VerSe'19 & VerSe'20](https://github.com/anjany/verse)** and **[CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K)**, selecting **1,037 patients** with complete L1–L5 lumbar segmentation labels. For each patient, we generate paired biplanar DRRs (AP + Lateral) using **[Plastimatch](https://plastimatch.org/)** ray-casting, along with calibrated 3×4 projection matrices and ground-truth point clouds — all configured for direct use with PPCNet training and evaluation. The complete dataset is open-sourced on Hugging Face.
 
-**[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
+**[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB) [![DOI](https://img.shields.io/badge/DOI-10.xxxx%2Fxxxxx-blue)](https://doi.org/10.57967/hf/9944)
 
+> **If you use this dataset in your work, please cite:**
+> ```bibtex
+> @misc{ppcnet_dataset_2026,
+>	author       = { PPCNet Dataset },
+>	title        = { PPCNet (Revision bce5fd9) },
+>	year         = 2026,
+>	url          = { https://huggingface.co/datasets/ppcnet-dataset/PPCNet },
+>	doi          = { 10.57967/hf/9944 },
+>	publisher    = { Hugging Face }
+> }
+> ```
 <summary><b>Dataset Structure</b></summary>
 
 ```
