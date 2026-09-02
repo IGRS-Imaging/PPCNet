@@ -2,14 +2,14 @@
 <div align="center">
 
 # PPCNet: Projection-Conditioned Point Cloud Reconstruction of Spinal Vertebrae from Biplanar Radiographs
-(The final model is **PPCNet-v6** (38.6M parameters, 8,192 points, ResNet-34 backbone), the result of a six-generation ablation study (v1–v6) details are provided.)
+The final model is **PPCNet-v6** — 38.6M parameters, 8,192 points, ResNet-34 backbone — the result of a six-generation ablation study (v1–v6) documented in this repository.
 
 [![Dataset](https://img.shields.io/badge/Dataset-1%2C037_patients-green)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**WE MADE DATASET OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
+**The dataset is open-source — [download it from Hugging Face](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 </div>
 
@@ -95,6 +95,8 @@ At each refinement stage, every query point is projected into both image planes 
 
 </div>
 
+---
+
 ## Phantom-Based Surgical Navigation Tracking
 
 To validate clinical applicability beyond computational metrics, we perform phantom-based navigation tracking using a 3D-printed lumbar spine phantom, an optical tracking system, and fiducial-based CT-to-phantom registration.
@@ -149,7 +151,9 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 - **FRE = 0.41 mm** — better than the 0.87 mm reported for clinical CT-navigated instrumentation ([Gubian et al., 2022](https://doi.org/10.3390/jcm11195530))
 - **Mean centroid error = 3.01 mm** — well within the clinically accepted Gertzbein-Robbins Grade B threshold (<2 mm pedicle cortical breach) ([Gertzbein & Robbins, 1990](https://doi.org/10.1097/00007632-199001000-00004)) and consistent with ~5 mm screw tip deviations reported in CT-navigated spine surgery ([Virk & Qureshi, 2019](https://doi.org/10.21037/jss.2019.04.23))
 
-### Ablation Study
+---
+
+## Ablation Study
 
 <div align="center">
 <img alt="ablation_visual" src="https://github.com/user-attachments/assets/f769b724-1d73-4669-b6c2-415d078cc9cd" />
@@ -174,28 +178,32 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 
 We curate a custom dataset from **[VerSe'19 & VerSe'20](https://github.com/anjany/verse)** and **[CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K)**, selecting **1,037 patients** with complete L1–L5 lumbar segmentation labels. For each patient, we generate paired biplanar DRRs (AP + Lateral) using **[Plastimatch](https://plastimatch.org/)** ray-casting, along with calibrated 3×4 projection matrices and ground-truth point clouds — all configured for direct use with PPCNet training and evaluation. The complete dataset is open-sourced on Hugging Face.
 
-**[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
+**[Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
 
+<details>
 <summary><b>Dataset Structure</b></summary>
 
 ```
 Lumbar_Filtered_1037/
-├── dataset_split.json              # Fixed 829/103/105 split (seed=42)
+├── dataset_split.json     # Fixed 829/103/105 split (seed=42)
 ├── lumbar_0001/
-│   ├── ct.nii.gz                   # CT volume (LPS orientation)
-│   ├── seg.nii.gz                  # Segmentation labels (L1=20 ... L5=24)
-│   ├── gt_ppc.vtk                  # Ground-truth point cloud (5,120 pts)
+│   ├── ct.nii.gz          # CT volume (LPS orientation)
+│   ├── seg.nii.gz         # Segmentation labels (L1=20 ... L5=24)
+│   ├── gt_ppc.vtk         # Ground-truth point cloud (5,120 pts)
 │   ├── AP_0/
-│   │   ├── drr_AP_0.png           # AP DRR (512×512)
-│   │   ├── P_AP_0.txt             # 3×4 projection matrix
+│   │   ├── drr_AP_0.png   # AP DRR (512×512)
+│   │   └── P_AP_0.txt     # 3×4 projection matrix
 │   └── LP_90/
-│       ├── drr_LP_90.png          # Lateral DRR (512×512)
-│       ├── P_LP_90.txt            # 3×4 projection matrix
+│       ├── drr_LP_90.png  # Lateral DRR (512×512)
+│       └── P_LP_90.txt    # 3×4 projection matrix
 ├── lumbar_0002/
 │   └── ...
 └── ...  (1,037 patients)
 ```
 
+</details>
+
+<details>
 <summary><b>DRR Generation Parameters</b></summary>
 
 <div align="center">
@@ -213,6 +221,8 @@ Lumbar_Filtered_1037/
 
 </div>
 
+</details>
+
 ---
 
 ## Installation
@@ -228,12 +238,18 @@ conda activate ppcnet
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 
 # Install dependencies
-pip install numpy scipy scikit-image nibabel open3d vtk pillow tqdm matplotlib
+pip install numpy scipy scikit-image nibabel open3d vtk pillow tqdm matplotlib pandas
+
+# Additional, for the dataset-generation scripts only
+pip install SimpleITK pydicom opencv-python
 ```
 
 ---
+
 ## Repository Structure
+
 <details>
+<summary><b>Full directory tree</b></summary>
 
 ```
 PPCNet/
@@ -314,9 +330,9 @@ PROJECT_DIR = Path("/path/to/output")
 # Open "PPCNet-v6 (Final Model)/ppc_v6_spine_aware.ipynb" and run all cells
 
 # 3. Outputs
-# ├── checkpoints/best_checkpoint.pth   # Trained model
+# ├── checkpoints/best_checkpoint.pth  # Trained model
 # ├── results/test_results_v6_tta.csv  # Per-patient metrics
-# └── results/<patient_id>_pred.vtk     # Predicted point clouds
+# └── results/<patient_id>_pred.vtk    # Predicted point clouds
 ```
 
 Each notebook is self-contained with:
