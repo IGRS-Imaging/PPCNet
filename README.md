@@ -9,7 +9,7 @@ The final model is **PPCNet-v6** — 38.6M parameters, 8,192 points, ResNet-34 b
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**The dataset is open-source — [download it from Hugging Face](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
+**The dataset is open-source — [Download it from Hugging Face](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 </div>
 
