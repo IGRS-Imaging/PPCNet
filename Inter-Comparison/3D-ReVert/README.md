@@ -19,7 +19,7 @@ This is a **re-implementation** of 3D-ReVert adapted for complete lumbar spine r
 | **Loss** | CD-L1 (train) + CD-L2 (monitor) — **unchanged** | — |
 | **LR schedule** | Step decay ×0.7 every 50 epochs | — |
 | **Dataset** | — | Lumbar_Filtered_1037 (829/103/105 split) |
-| **Points** | — | 8,192 (matching PPCNet-v11) |
+| **Points** | — | 8,192 (matching PPCNet-v6) |
 | **Evaluation** | — | Chamfer, F@1/2/5 mm, HD95 (world-mm) |
 | **Projection matrix** | — | **Not used** |
 
@@ -132,7 +132,7 @@ Training completed (300 epochs, no early stop triggered)
 
 <div align="center">
 
-| Metric | 3D-ReVert | PPCNet-v11 (Ours) | Δ |
+| Metric | 3D-ReVert | PPCNet-v6 (Ours) | Δ |
 |:------:|:---------:|:-----------------:|:-:|
 | CD (mm) ↓ | 2.084 | **1.981** | −0.103 |
 | F@1 ↑ | 0.133 | **0.155** | +0.022 |
@@ -153,10 +153,10 @@ Inter-Comparison/3D-ReVert/
 ├── README.md                              # This file
 ├── 3DReVert_Inter_Comparison.ipynb        # Complete training + evaluation notebook
 └── results/
-    ├── test_results_3drevert_lumbar.csv   # Per-patient test metrics
-    ├── 3DReVert_AP_View (lumbar_0028).png
-    ├── 3DReVert_LP_View (lumbar_0028).png
-    └── 3DReVert_Axial_View (lumbar_0028).png
+    ├── test_results_3drevert.csv          # Per-patient test metrics
+    ├── 3DREVERT_AP_View (lumbar_0028 test set).png
+    ├── 3DREVERT_LP_View (lumbar_0028 test set).png
+    └── 3DREVERT_Axial_View (lumbar_0028 test set).png
 ```
 
 ---
@@ -165,7 +165,7 @@ Inter-Comparison/3D-ReVert/
 
 ### 1. Update Paths
 
-In Cell 2 of the notebook, update:
+In the configuration cell, update:
 
 ```python
 DATA_ROOT   = Path("./data/Lumbar_Filtered_1037")
@@ -191,7 +191,7 @@ The final cells:
 - Run inference on 105 test patients
 - Denormalise predictions from local to world-mm space
 - Compute all five metrics (Chamfer, F@1/2/5, HD95) in world-mm
-- Save per-patient CSV to `results/test_results_3drevert_lumbar.csv`
+- Save per-patient CSV to `results/test_results_3drevert.csv`
 
 ---
 

@@ -1,31 +1,3 @@
-"""
-generate_drr_all.py
-
-Generates 10 DRRs per CT for all datasets in Lumbar_ALL_LPS.
-Output goes INSIDE each patient folder alongside ct.nii.gz and seg.nii.gz.
-
-Structure after running:
-  Lumbar_ALL_LPS/
-    lumbar_0001/
-      ct.nii.gz
-      seg.nii.gz
-      AP_0/
-        drr_AP_0.png
-        drr_AP_0.dcm
-        P_AP_0.txt
-        geometry_AP_0.jsons
-      LP_90/
-        drr_LP_90.png
-        drr_LP_90.dcm
-        P_LP_90.txt
-        geometry_LP_90.json
-      ... (10 view folders)
-    lumbar_0002/
-      ...
-
-Resume-safe: skips CTs where all 10 views already have geometry JSON.
-"""
-
 import os, json, glob, subprocess, sys, time, argparse
 import numpy as np
 import SimpleITK as sitk
@@ -36,7 +8,6 @@ from pydicom.dataset import Dataset, FileDataset
 from pydicom.uid import generate_uid
 import datetime
 
-# ── CONFIGURATION ──────────────────────────────────────────────────────
 parser = argparse.ArgumentParser(description="Generate DRRs for all patients")
 parser.add_argument("--input_dir", type=str, required=True,
                     help="Root directory containing patient folders (e.g., lumbar_0001/ct.nii.gz)")
@@ -59,7 +30,6 @@ VIEW_DEFINITIONS = [
 ]
 
 
-# ── HELPERS ────────────────────────────────────────────────────────────
 def nrm_from_angle(angle_deg):
     rad = np.radians(float(angle_deg))
     return np.array([-np.sin(rad), np.cos(rad), 0.0])
@@ -105,7 +75,6 @@ def save_png(arr, path):
 
 
 def save_dcm(png_path, dcm_path, ct_id, view_label):
-    """Save DRR as DICOM (grayscale, 1024x1024)."""
     img = np.array(Image.open(png_path).convert("L"))
     assert img.shape == (IMAGE_DIM[1], IMAGE_DIM[0]), f"Bad shape: {img.shape}"
 
@@ -151,7 +120,7 @@ def parse_plastimatch_txt(txt_path):
 
 
 def is_ct_done(ct_dir):
-    """Check if all 10 views already have geometry JSON."""
+    """Return True when every configured view already has a geometry JSON."""
     for label, _ in VIEW_DEFINITIONS:
         geo = os.path.join(ct_dir, label, f"geometry_{label}.json")
         if not os.path.exists(geo):
@@ -159,7 +128,6 @@ def is_ct_done(ct_dir):
     return True
 
 
-# ── MAIN ───────────────────────────────────────────────────────────────
 def process_one_ct(ct_dir):
     ct_id   = os.path.basename(ct_dir)
     ct_path = os.path.join(ct_dir, "ct.nii.gz")
@@ -170,7 +138,6 @@ def process_one_ct(ct_dir):
     if is_ct_done(ct_dir):
         return "skip"
 
-    # Verify LPS
     ct = sitk.ReadImage(ct_path)
     dirn = np.array(ct.GetDirection()).reshape(3, 3)
     if not np.allclose(dirn, np.eye(3), atol=1e-3):
@@ -180,7 +147,6 @@ def process_one_ct(ct_dir):
     center = [(s - 1) / 2.0 for s in size]
     iso = np.array(ct.TransformContinuousIndexToPhysicalPoint(center))
 
-    # Bone-enhanced temp CT
     temp_ct = os.path.join(ct_dir, "_temp_ct.nii.gz")
     prepare_ct(ct_path, temp_ct)
 
@@ -192,7 +158,6 @@ def process_one_ct(ct_dir):
         view_dir = os.path.join(ct_dir, label)
         os.makedirs(view_dir, exist_ok=True)
 
-        # Check if this view already done
         if os.path.exists(os.path.join(view_dir, f"geometry_{label}.json")):
             ok += 1
             continue
@@ -228,27 +193,22 @@ def process_one_ct(ct_dir):
         if not os.path.exists(pfm) or not os.path.exists(txt):
             continue
 
-        # Save PNG
         arr = read_pfm(pfm)
         png_path = os.path.join(view_dir, f"drr_{label}.png")
         save_png(arr, png_path)
         os.remove(pfm)
 
-        # Save DCM
         dcm_path = os.path.join(view_dir, f"drr_{label}.dcm")
         try:
             save_dcm(png_path, dcm_path, ct_id, label)
         except Exception:
-            pass  # dcm is optional, don't fail
+            pass  # DICOM export is optional
 
-        # Parse P matrix
         P = parse_plastimatch_txt(txt)
         os.remove(txt)
 
-        # Save P
         np.savetxt(os.path.join(view_dir, f"P_{label}.txt"), P, fmt="%.8e")
 
-        # Save geometry JSON
         geo = {
             "label": label,
             "angle_deg": float(angle_deg),
@@ -268,16 +228,15 @@ def process_one_ct(ct_dir):
 
         ok += 1
 
-    # Cleanup
     if os.path.exists(temp_ct):
         os.remove(temp_ct)
 
-    return f"{ok}/10"
+    return f"{ok}/{len(VIEW_DEFINITIONS)}"
 
 
 def main():
     print("=" * 70)
-    print("  DRR GENERATION — ALL 1053 DATASETS")
+    print("  DRR GENERATION")
     print("=" * 70)
 
     ct_dirs = sorted([d for d in glob.glob(os.path.join(ROOT, "*"))

@@ -126,7 +126,7 @@ Ep 135/200: Early stop (60 epochs without improvement)
 
 <div align="center">
 
-| Metric | BX2S-Net | PPCNet-v11 (Ours) | Δ |
+| Metric | BX2S-Net | PPCNet-v6 (Ours) | Δ |
 |:------:|:--------:|:-----------------:|:-:|
 | CD (mm) ↓ | 2.564 | **1.981** | −0.583 |
 | F@1 ↑ | 0.081 | **0.155** | +0.074 |
@@ -148,9 +148,9 @@ Inter-Comparison/BX2SNET/
 ├── BX2S_NET_Inter_Comparison.ipynb        # Complete training + evaluation notebook
 └── results/
     ├── test_results_bx2snet.csv           # Per-patient test metrics
-    ├── BX2SNET_AP_View (lumbar_0028).png
-    ├── BX2SNET_LP_View (lumbar_0028).png
-    └── BX2SNET_Axial_View (lumbar_0028).png
+    ├── BX2SNET_AP_View (lumbar_0028 test set).png
+    ├── BX2SNET_LP_View (lumbar_0028 test set).png
+    └── BX2SNET_Axial_View (lumbar_0028 test set).png
 ```
 
 ---
@@ -159,7 +159,7 @@ Inter-Comparison/BX2SNET/
 
 ### 1. Update Paths
 
-In Cell 1 of the notebook, update:
+In the configuration cell, update:
 
 ```python
 DATA_ROOT   = Path("./data/Lumbar_Filtered_1037")

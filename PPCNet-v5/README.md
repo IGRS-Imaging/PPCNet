@@ -46,7 +46,7 @@ PPCNet-v5 introduces a stability-focused training regime with three-phase loss s
 1. Update paths in the config cell:
    ```python
    DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
-   PROJECT_DIR = Path("/path/to/ppc_network_v10")
+   PROJECT_DIR = Path("/path/to/ppc_network_v5")
    ```
 2. Run all cells sequentially — trained from scratch (no warm-start needed)
 3. Three-phase loss scheduling is handled automatically

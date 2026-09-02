@@ -9,7 +9,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**WE MADE DATASET OPEN-SOURCE ➡️ [Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
+**The dataset is open-source — [download it from Hugging Face](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 </div>
 
@@ -23,7 +23,6 @@
 
 ## Architecture
 
-<!-- Replace with your architecture diagram -->
 <div align="center">
 <img alt="arch_diag" src="https://github.com/user-attachments/assets/11855dd6-0128-4a2e-9cd1-c50d672d169e" />
 </div>
@@ -175,7 +174,7 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 
 We curate a custom dataset from **[VerSe'19 & VerSe'20](https://github.com/anjany/verse)** and **[CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K)**, selecting **1,037 patients** with complete L1–L5 lumbar segmentation labels. For each patient, we generate paired biplanar DRRs (AP + Lateral) using **[Plastimatch](https://plastimatch.org/)** ray-casting, along with calibrated 3×4 projection matrices and ground-truth point clouds — all configured for direct use with PPCNet training and evaluation. The complete dataset is open-sourced on Hugging Face.
 
-**[⬇️ Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
+**[Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
 
 <summary><b>Dataset Structure</b></summary>
 
@@ -243,56 +242,60 @@ PPCNet/
 ├── Media/
 │   ├── Images/
 │   ├── Videos/
+├── Dataset_Generation/
+│   ├── README.md
+│   ├── generate_drr.py                 # Biplanar DRRs + projection matrices
+│   └── generate_gt_ppc.py              # Ground-truth point clouds
 ├── Inter-Comparison/
 │   ├── X2CTGAN/
 │   │   ├── README.md
 │   │   ├── X2CT_GAN_Inter_Comparison.ipynb
 │   │   └── results/
 │   │       ├── test_results_x2ctgan.csv
-│   │       ├── X2CTGAN_AP_View (lumbar_0028).png
-│   │       ├── X2CTGAN_LP_View (lumbar_0028).png
-│   │       └── X2CTGAN_Axial_View (lumbar_0028).png
+│   │       ├── X2CTGAN_AP_View (lumbar_0028 test set).png
+│   │       ├── X2CTGAN_LP_View (lumbar_0028 test set).png
+│   │       └── X2CTGAN_Axial_View (lumbar_0028 test set).png
 │   ├── BX2SNET/
 │   │   ├── README.md
-│   │   ├── BX2S_Net_Inter_Comparison.ipynb
+│   │   ├── BX2S_NET_Inter_Comparison.ipynb
 │   │   └── results/
 │   │       ├── test_results_bx2snet.csv
-│   │       ├── BX2SNET_AP_View (lumbar_0028).png
-│   │       ├── BX2SNET_LP_View (lumbar_0028).png
-│   │       └── BX2SNET_Axial_View (lumbar_0028).png
+│   │       ├── BX2SNET_AP_View (lumbar_0028 test set).png
+│   │       ├── BX2SNET_LP_View (lumbar_0028 test set).png
+│   │       └── BX2SNET_Axial_View (lumbar_0028 test set).png
 │   ├── Swin-X2S/
 │   │   ├── README.md
-│   │   ├── Swin_X2S_Inter_Comparison.ipynb
+│   │   ├── SwinX2S_Inter_Comparison.ipynb
 │   │   └── results/
 │   │       ├── test_results_swinx2s.csv
-│   │       ├── SwinX2S_AP_View (lumbar_0028).png
-│   │       ├── SwinX2S_LP_View (lumbar_0028).png
-│   │       └── SwinX2S_Axial_View (lumbar_0028).png
+│   │       ├── SWINX2S_Axial_View (lumbar_0028 test set).png
+│   │       ├── SWINX2S_Coronal_View (lumbar_0028 test set).png
+│   │       └── SWINX2S_Sagittal_View (lumbar_0028 test set).png
 │   └── 3D-ReVert/
 │       ├── README.md
-│       ├── 3D_ReVert_Inter_Comparison.ipynb
+│       ├── 3DReVert_Inter_Comparison.ipynb
 │       └── results/
 │           ├── test_results_3drevert.csv
-│           ├── 3DReVert_AP_View (lumbar_0028).png
-│           ├── 3DReVert_LP_View (lumbar_0028).png
-│           └── 3DReVert_Axial_View (lumbar_0028).png
-├── PPCNet-v1/
+│           ├── 3DREVERT_AP_View (lumbar_0028 test set).png
+│           ├── 3DREVERT_LP_View (lumbar_0028 test set).png
+│           └── 3DREVERT_Axial_View (lumbar_0028 test set).png
+├── PPCNet-v1 (Baseline Model)/
 │   ├── README.md
-│   └── ppc_training_v6_fixed.ipynb
+│   └── ppc_training_v1_fixed.ipynb
 ├── PPCNet-v2/
 │   ├── README.md
-│   ├── ppc_training_v7_gap_perfect.ipynb
-│   └── ppc_v7_gan_refiner.ipynb
+│   ├── ppc_training_v2_gap_perfect.ipynb
+│   └── ppc_v2_gan_refiner.ipynb
 ├── PPCNet-v3/
 │   ├── README.md
-│   └── ppc_training_v8_unified.ipynb
+│   └── ppc_training_v3_unified.ipynb
 ├── PPCNet-v4/
 │   ├── README.md
-│   └── ppc_v9_hybrid_copy.ipynb
+│   └── ppc_v4_hybrid.ipynb
 ├── PPCNet-v5/
 │   ├── README.md
-│   └── ppc_v10_stable.ipynb
-└── PPCNet-v6/                         # ⭐ Final model
+│   └── ppc_v5_stable.ipynb
+└── PPCNet-v6 (Final Model)/            # Final model
     ├── README.md
     └── ppc_v6_spine_aware.ipynb
 ```
@@ -308,7 +311,7 @@ DATA_ROOT   = Path("/path/to/Lumbar_Filtered_1037")
 PROJECT_DIR = Path("/path/to/output")
 
 # 2. Run the final model (PPCNet-v6)
-# Open PPCNet-v6/ppc_v6_spine_aware.ipynb and run all cells
+# Open "PPCNet-v6 (Final Model)/ppc_v6_spine_aware.ipynb" and run all cells
 
 # 3. Outputs
 # ├── checkpoints/best_checkpoint.pth   # Trained model
@@ -317,12 +320,12 @@ PROJECT_DIR = Path("/path/to/output")
 ```
 
 Each notebook is self-contained with:
-- ⚙️ **Config** — all hyperparameters in one cell
-- 📦 **Data** — dataset class with augmentation
-- 🏗️ **Model** — full architecture definition
-- 📉 **Loss** — all loss functions
-- 🏋️ **Training** — with checkpoint resume
-- 📊 **Evaluation** — test metrics + VTK export
+- **Config** — all hyperparameters in one cell
+- **Data** — dataset class with augmentation
+- **Model** — full architecture definition
+- **Loss** — all loss functions
+- **Training** — with checkpoint resume
+- **Evaluation** — test metrics and VTK export
 
 ---
 

@@ -25,7 +25,7 @@ PPCNet-v4 introduces warm-starting from the v2 checkpoint and a Chamfer-ramp cur
 | Scheduler | Linear warmup (10 epochs) + cosine decay |
 | Epochs | 150 |
 | Batch Size | 2 |
-| Warm-Start | Loaded from v8 checkpoint |
+| Warm-Start | Loaded from v2 checkpoint |
 | Chamfer Ramp | Starts at epoch 16, full weight at epoch 41 |
 | Losses | Chamfer (ramped) + gap penalty + Z-gap + axial density + auxiliary occupancy |
 
@@ -37,7 +37,7 @@ PPCNet-v4 introduces warm-starting from the v2 checkpoint and a Chamfer-ramp cur
 
 ## Files
 
-- `ppc_v4_hybrid_copy.ipynb` — Training and evaluation notebook
+- `ppc_v4_hybrid.ipynb` — Training and evaluation notebook
 
 ## Usage
 

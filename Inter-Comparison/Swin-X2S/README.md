@@ -131,7 +131,7 @@ Ep 154/200: Early stop (60 epochs without improvement)
 
 <div align="center">
 
-| Metric | Swin-X2S | PPCNet-v11 (Ours) | Δ |
+| Metric | Swin-X2S | PPCNet-v6 (Ours) | Δ |
 |:------:|:--------:|:-----------------:|:-:|
 | CD (mm) ↓ | 2.475 | **1.981** | −0.494 |
 | F@1 ↑ | 0.081 | **0.155** | +0.074 |
@@ -153,9 +153,9 @@ Inter-Comparison/Swin-X2S/
 ├── SwinX2S_Inter_Comparison.ipynb         # Complete training + evaluation notebook
 └── results/
     ├── test_results_swinx2s.csv           # Per-patient test metrics
-    ├── SwinX2S_AP_View (lumbar_0028).png
-    ├── SwinX2S_LP_View (lumbar_0028).png
-    └── SwinX2S_Axial_View (lumbar_0028).png
+    ├── SWINX2S_Axial_View (lumbar_0028 test set).png
+    ├── SWINX2S_Coronal_View (lumbar_0028 test set).png
+    └── SWINX2S_Sagittal_View (lumbar_0028 test set).png
 ```
 
 ---
@@ -164,7 +164,7 @@ Inter-Comparison/Swin-X2S/
 
 ### 1. Update Paths
 
-In Cell 1 of the notebook, update:
+In the configuration cell, update:
 
 ```python
 DATA_ROOT   = Path("./data/Lumbar_Filtered_1037")

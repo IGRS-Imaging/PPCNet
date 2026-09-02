@@ -126,7 +126,7 @@ Ep 100/100: Training complete
 
 <div align="center">
 
-| Metric | X2CT-GAN | PPCNet-v11 (Ours) | Δ |
+| Metric | X2CT-GAN | PPCNet-v6 (Ours) | Δ |
 |:------:|:--------:|:-----------------:|:-:|
 | CD (mm) ↓ | 2.489 | **1.981** | −0.508 |
 | F@1 ↑ | 0.079 | **0.155** | +0.076 |
@@ -143,11 +143,14 @@ Ep 100/100: Training complete
 ## Files
 
 ```
-Inter-Comparison/X2CT-GAN/
+Inter-Comparison/X2CTGAN/
 ├── README.md                              # This file
-├── x2ctgan_inter_comparison.ipynb         # Complete training + evaluation notebook
+├── X2CT_GAN_Inter_Comparison.ipynb        # Complete training + evaluation notebook
 └── results/
-    └── test_results_x2ctgan.csv, AP, LP & Axial - Views (lumbar_0028 test set)  # Per-patient test metrics
+    ├── test_results_x2ctgan.csv           # Per-patient test metrics
+    ├── X2CTGAN_AP_View (lumbar_0028 test set).png
+    ├── X2CTGAN_LP_View (lumbar_0028 test set).png
+    └── X2CTGAN_Axial_View (lumbar_0028 test set).png
 ```
 
 ---
@@ -156,7 +159,7 @@ Inter-Comparison/X2CT-GAN/
 
 ### 1. Update Paths
 
-In Cell 1 of the notebook, update:
+In the configuration cell, update:
 
 ```python
 DATA_ROOT   = Path("./data/Lumbar_Filtered_1037")
