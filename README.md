@@ -1,3 +1,4 @@
+<img width="512" height="512" alt="PPCNet" src="https://github.com/user-attachments/assets/4833be31-b584-4262-96ed-f958396586b7" />
 
 <div align="center">
 
