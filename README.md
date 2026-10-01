@@ -10,7 +10,7 @@ The final model is **PPCNet-v6** — 38.6M parameters, 8,192 points, ResNet-34 b
 [![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C)](https://pytorch.org)
 
-**The dataset is open-source — [Download it from Hugging Face](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
+**The dataset is hosted on Hugging Face — [Request access to the PPCNet Dataset](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)**
 
 </div>
 
@@ -177,9 +177,11 @@ Phantom-based navigation: (i) needle placed at L4, (ii) needle placed at L1. Eac
 
 ## Dataset
 
-We curate a custom dataset from **[VerSe'19 & VerSe'20](https://github.com/anjany/verse)** and **[CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K)**, selecting **1,037 patients** with complete L1–L5 lumbar segmentation labels. For each patient, we generate paired biplanar DRRs (AP + Lateral) using **[Plastimatch](https://plastimatch.org/)** ray-casting, along with calibrated 3×4 projection matrices and ground-truth point clouds — all configured for direct use with PPCNet training and evaluation. The complete dataset is open-sourced on Hugging Face.
+We curate a custom dataset from **[VerSe'19 & VerSe'20](https://github.com/anjany/verse)** and **[CTSpine1K](https://github.com/MIRACLE-Center/CTSpine1K)**, selecting **1,037 patients** with complete L1–L5 lumbar segmentation labels. For each patient, we generate paired biplanar DRRs (AP + Lateral) using **[Plastimatch](https://plastimatch.org/)** ray-casting, along with calibrated 3×4 projection matrices and ground-truth point clouds — all configured for direct use with PPCNet training and evaluation. The complete dataset is publicly documented and hosted on Hugging Face, with access to the dataset files provided through a gated, manually reviewed request process.
 
-**[Download Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
+**[Request Access to Dataset (Hugging Face)](https://huggingface.co/datasets/ppcnet-dataset/PPCNet)** (69.2 GB)
+
+> **Dataset access:** PPCNet is available for academic, scientific, educational, and non-commercial research purposes. Access to the dataset files is provided through a gated, manually reviewed request process on Hugging Face. Researchers must agree to the **[PPCNet Dataset License and Terms of Use](https://huggingface.co/datasets/ppcnet-dataset/PPCNet/blob/main/LICENSE)** and applicable upstream dataset terms.
 
 <details>
 <summary><b>Dataset Structure</b></summary>
